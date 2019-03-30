@@ -11,15 +11,20 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
     }
 
+    
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
     }
 
-
+    
+    @IBAction func onNewMenuSelected(_ sender: NSMenuItem) {
+        let newWindowController = NSStoryboard(name: "Main", bundle: nil)
+            .instantiateController(withIdentifier: "LucarneWindow") as? NSWindowController
+        newWindowController?.showWindow(self)
+    }
+    
+    
 }
 
