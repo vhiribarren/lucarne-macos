@@ -60,6 +60,7 @@ class LucarneController: NSViewController {
         }
         let windowImage = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(targetWindowId!), [.boundsIgnoreFraming, .nominalResolution])
         imageView!.image = NSImage(cgImage: windowImage!, size: .zero)
+        view.window!.aspectRatio = NSMakeSize(CGFloat((windowImage?.width)!), CGFloat((windowImage?.height)!));
     }
     
     

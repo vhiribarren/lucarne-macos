@@ -169,12 +169,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="203" height="79"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w">
-                                <rect key="frame" x="-3" y="-194" width="486" height="276"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w">
+                                <rect key="frame" x="-3" y="-3" width="209" height="85"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="cac-He-bea"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="QDs-R3-H9w" firstAttribute="top" secondItem="S3x-P9-5f1" secondAttribute="top" id="2f5-7J-WRp"/>
+                            <constraint firstAttribute="bottom" secondItem="QDs-R3-H9w" secondAttribute="bottom" id="8wr-0S-kzP"/>
+                            <constraint firstItem="QDs-R3-H9w" firstAttribute="leading" secondItem="S3x-P9-5f1" secondAttribute="leading" id="N0S-Tw-dFc"/>
+                            <constraint firstAttribute="trailing" secondItem="QDs-R3-H9w" secondAttribute="trailing" id="VpA-A1-st7"/>
+                            <constraint firstAttribute="trailing" secondItem="QDs-R3-H9w" secondAttribute="trailing" id="msI-Yi-nkS"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="QDs-R3-H9w" id="F3K-fJ-515"/>
