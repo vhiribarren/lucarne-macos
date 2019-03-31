@@ -14,6 +14,7 @@
 		63CC8BD8224F727600F1D80C /* CaptureWindowId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */; };
 		63CC8BDA224FDC3E00F1D80C /* LucarneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */; };
 		63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */; };
+		63CC8BE422514C2800F1D80C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 63CC8BE322514C2800F1D80C /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureWindowId.swift; sourceTree = "<group>"; };
 		63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LucarneController.swift; sourceTree = "<group>"; };
 		63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceControllerSegue.swift; sourceTree = "<group>"; };
+		63CC8BE322514C2800F1D80C /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		63CC8BC6224F6FCC00F1D80C /* lucarne-macos */ = {
 			isa = PBXGroup;
 			children = (
+				63CC8BE522514E7200F1D80C /* resources */,
 				63CC8BDF2250FB3C00F1D80C /* controllers */,
 				63CC8BE22250FC0F00F1D80C /* tools */,
 				63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */,
@@ -86,6 +89,14 @@
 				63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */,
 			);
 			path = tools;
+			sourceTree = "<group>";
+		};
+		63CC8BE522514E7200F1D80C /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				63CC8BE322514C2800F1D80C /* Credits.rtf */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63CC8BCC224F6FCC00F1D80C /* Assets.xcassets in Resources */,
+				63CC8BE422514C2800F1D80C /* Credits.rtf in Resources */,
 				63CC8BCF224F6FCC00F1D80C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
