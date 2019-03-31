@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */; };
-		63CC8BCA224F6FCC00F1D80C /* SelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC9224F6FCC00F1D80C /* SelectionController.swift */; };
+		63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */; };
 		63CC8BCC224F6FCC00F1D80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CC8BCB224F6FCC00F1D80C /* Assets.xcassets */; };
 		63CC8BCF224F6FCC00F1D80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63CC8BCD224F6FCC00F1D80C /* Main.storyboard */; };
 		63CC8BD8224F727600F1D80C /* CaptureWindowId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		63CC8BC4224F6FCC00F1D80C /* Lucarne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lucarne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63CC8BC9224F6FCC00F1D80C /* SelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionController.swift; sourceTree = "<group>"; };
+		63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureController.swift; sourceTree = "<group>"; };
 		63CC8BCB224F6FCC00F1D80C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63CC8BCE224F6FCC00F1D80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63CC8BD0224F6FCC00F1D80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,17 +59,33 @@
 		63CC8BC6224F6FCC00F1D80C /* lucarne-macos */ = {
 			isa = PBXGroup;
 			children = (
+				63CC8BDF2250FB3C00F1D80C /* controllers */,
+				63CC8BE22250FC0F00F1D80C /* tools */,
 				63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */,
-				63CC8BC9224F6FCC00F1D80C /* SelectionController.swift */,
 				63CC8BCB224F6FCC00F1D80C /* Assets.xcassets */,
 				63CC8BCD224F6FCC00F1D80C /* Main.storyboard */,
 				63CC8BD0224F6FCC00F1D80C /* Info.plist */,
 				63CC8BD1224F6FCC00F1D80C /* lucarne_macos.entitlements */,
-				63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */,
-				63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */,
-				63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */,
 			);
 			path = "lucarne-macos";
+			sourceTree = "<group>";
+		};
+		63CC8BDF2250FB3C00F1D80C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */,
+				63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		63CC8BE22250FC0F00F1D80C /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */,
+				63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */,
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +160,7 @@
 				63CC8BDA224FDC3E00F1D80C /* LucarneController.swift in Sources */,
 				63CC8BD8224F727600F1D80C /* CaptureWindowId.swift in Sources */,
 				63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */,
-				63CC8BCA224F6FCC00F1D80C /* SelectionController.swift in Sources */,
+				63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */,
 				63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

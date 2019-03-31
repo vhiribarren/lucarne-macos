@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="508" y="655"/>
         </scene>
-        <!--Selection Controller-->
+        <!--Capture Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="SelectionController" customModule="Lucarne" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="CaptureController" customModule="Lucarne" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
                         <autoresizingMask key="autoresizingMask"/>

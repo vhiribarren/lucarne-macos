@@ -9,7 +9,7 @@ import os.log
 import Cocoa
 import CoreGraphics
 
-class SelectionController: NSViewController {
+class CaptureController: NSViewController {
 
     
     private var captureCommand: CaptureWindowId?
