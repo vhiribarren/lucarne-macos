@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @IBAction func onNewMenuSelected(_ sender: NSMenuItem) {
         let newWindowController = NSStoryboard(name: "Main", bundle: nil)
-            .instantiateController(withIdentifier: "LucarneWindow") as? NSWindowController
+            .instantiateController(withIdentifier: "SelectionWindow") as? NSWindowController
         newWindowController?.showWindow(self)
     }
     
