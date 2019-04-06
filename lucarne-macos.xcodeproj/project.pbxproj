@@ -29,6 +29,7 @@
 		63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LucarneController.swift; sourceTree = "<group>"; };
 		63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceControllerSegue.swift; sourceTree = "<group>"; };
 		63CC8BE322514C2800F1D80C /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		63CC8BEB2258AA7000F1D80C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +141,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 63CC8BBB224F6FCC00F1D80C;
 			productRefGroup = 63CC8BC5224F6FCC00F1D80C /* Products */;
@@ -184,6 +186,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				63CC8BCE224F6FCC00F1D80C /* Base */,
+				63CC8BEB2258AA7000F1D80C /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -256,6 +260,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
