@@ -44,15 +44,30 @@ class LucarneController: NSViewController {
     @IBOutlet weak var imageView: NSImageView!
     
     override func viewDidLoad() {
-        super.viewDidAppear()
+        super.viewDidLoad()
     }
     
     
     override func viewDidAppear() {
-        super.viewDidLoad()
+        super.viewDidAppear()
+        if let window = view.window {
+            window.isOpaque = false
+            window.backgroundColor = .clear
+            window.isMovableByWindowBackground = true
+            //window.styleMask.remove(.titled)
+            //window.styleMask = .borderless
+        }
+        else {
+            os_log("window variable is nil", type: .error)
+        }
+
         //view.window!.styleMask.remove(.titled)
     }
     
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
 
     
     override func viewWillDisappear() {

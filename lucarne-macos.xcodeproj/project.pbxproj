@@ -15,6 +15,7 @@
 		63CC8BDA224FDC3E00F1D80C /* LucarneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */; };
 		63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */; };
 		63CC8BE422514C2800F1D80C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 63CC8BE322514C2800F1D80C /* Credits.rtf */; };
+		63CC8BED2258C4A900F1D80C /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BEC2258C4A900F1D80C /* DraggableImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceControllerSegue.swift; sourceTree = "<group>"; };
 		63CC8BE322514C2800F1D80C /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		63CC8BEB2258AA7000F1D80C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		63CC8BEC2258C4A900F1D80C /* DraggableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */,
 				63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */,
+				63CC8BEC2258C4A900F1D80C /* DraggableImageView.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				63CC8BD8224F727600F1D80C /* CaptureWindowId.swift in Sources */,
 				63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */,
 				63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */,
+				63CC8BED2258C4A900F1D80C /* DraggableImageView.swift in Sources */,
 				63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

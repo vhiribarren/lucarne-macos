@@ -162,69 +162,6 @@
             </objects>
             <point key="canvasLocation" x="74" y="245"/>
         </scene>
-        <!--Window Controller-->
-        <scene sceneID="qKm-5C-Q2n">
-            <objects>
-                <windowController id="w6i-Xa-Ira" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="AgH-Y7-7dF">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="1734" y="313" width="480" height="270"/>
-                        <rect key="screenRect" x="1440" y="0.0" width="1920" height="1057"/>
-                        <connections>
-                            <outlet property="delegate" destination="w6i-Xa-Ira" id="zao-kl-H1A"/>
-                        </connections>
-                    </window>
-                    <connections>
-                        <segue destination="fwC-Qv-vVD" kind="relationship" relationship="window.shadowedContentViewController" id="tHo-kN-why"/>
-                    </connections>
-                </windowController>
-                <customObject id="IPR-bO-Z8k" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="663" y="245"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="WYb-gL-6Oe">
-            <objects>
-                <viewController id="fwC-Qv-vVD" sceneMemberID="viewController">
-                    <view key="view" id="EaQ-pN-k3T">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J7V-WP-V32">
-                                <rect key="frame" x="0.0" y="217" width="96" height="53"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <subviews>
-                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hhU-Ut-mMU">
-                                        <rect key="frame" x="0.0" y="31" width="96" height="22"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="22E-lq-xRW">
-                                            <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Pyo-9B-UVU"/>
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jej-pc-LqT">
-                                        <rect key="frame" x="-3" y="-2" width="19" height="27"/>
-                                        <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" id="9qq-ZR-PoJ"/>
-                                    </stepper>
-                                </subviews>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <customObject id="QrG-6w-lEH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1197" y="245"/>
-        </scene>
         <!--Lucarne Controller-->
         <scene sceneID="1Cl-aG-dBx">
             <objects>
@@ -233,7 +170,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="203" height="79"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" alphaValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w" customClass="DraggableImageView" customModule="Lucarne" customModuleProvider="target">
                                 <rect key="frame" x="-3" y="-3" width="209" height="85"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="cac-He-bea"/>
                             </imageView>
@@ -252,7 +189,7 @@
                 </viewController>
                 <customObject id="xZM-RU-oId" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="655"/>
+            <point key="canvasLocation" x="508" y="703"/>
         </scene>
         <!--Capture Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -285,6 +222,7 @@
                             </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iYb-ec-GJV" secondAttribute="bottom" constant="8" id="14h-vR-90X"/>
                             <constraint firstItem="6Fx-cN-yqB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="8" id="Cu8-6N-uPb"/>
                             <constraint firstItem="iYb-ec-GJV" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Dh5-aa-FNG"/>
                             <constraint firstItem="iYb-ec-GJV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="JTa-3V-iO5"/>
