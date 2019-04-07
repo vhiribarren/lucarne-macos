@@ -27,36 +27,34 @@ import Cocoa
 import CoreGraphics
 
 class CaptureController: NSViewController {
-
     
     private var captureCommand: CaptureWindowId?
     private var targetWindowId: Int?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
     override func viewDidAppear() {
         super.viewDidAppear()
-        view.window!.level = .floating
+        os_log(.debug,  log: .captureController, "%@", "\(#function)")
+        view.window?.level = .floating
     }
 
     @IBAction func onButtonClicked(_ sender: Any) {
-        os_log("Starting capture")
+        os_log(.debug, log: .captureController, "Starting capture")
         captureCommand = CaptureWindowId()
-        captureCommand?.capture { windowId in
-            os_log("%d", windowId)
+        captureCommand!.capture { windowId in
+            os_log(.debug, log: .captureController, "Capturing windowId: %d", windowId)
             self.targetWindowId = windowId
             self.performSegue(withIdentifier: "DisplayLucarne", sender: nil)
         }
     }
 
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
-        if segue.identifier == "DisplayLucarne" {
-            if let destination = segue.destinationController as? LucarneController {
-                destination.targetWindowId = targetWindowId
-            }
+        guard segue.identifier == "DisplayLucarne" else {
+            os_log(.fault, log: .captureController, "Bad segue identifier: %@", segue.identifier ?? "nil")
+            return
+        }
+        view.window!.styleMask.remove(.titled) // Cause viewController to reload, must not be done in viewDidAppear()
+        if let destination = segue.destinationController as? LucarneController {
+            destination.targetWindowId = targetWindowId
         }
     }
 

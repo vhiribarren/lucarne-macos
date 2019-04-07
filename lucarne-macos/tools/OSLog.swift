@@ -22,31 +22,19 @@
  SOFTWARE.
  */
 
-
-import os.log
-import EventKit
+import os
 import Foundation
 
-class CaptureWindowId {
+extension OSLog {
     
-    private var _monitor: Any?
+    static let captureController = OSLog(category: "\(String(describing: CaptureController.self))")
+    static let captureAction = OSLog(category: "\(String(describing: CaptureWindowId.self))")
+    static let lucarneController = OSLog(category: "\(String(describing: LucarneController.self))")
     
-    func capture(callback: @escaping (Int) -> Void) {
-        guard _monitor == nil else {
-            os_log(.error, log: .captureAction, "Already set to capture, ignoring command")
-            return
-        }
-        _monitor = NSEvent.addGlobalMonitorForEvents(matching: .leftMouseDown) { event in
-            callback(event.windowNumber)
-            self.cleanMonitor()
-        }
-    }
-    
-    private func cleanMonitor() {
-        if _monitor != nil {
-            NSEvent.removeMonitor(_monitor!)
-            _monitor = nil
-        }
+    private convenience init(category: String) {
+        let bundle = Bundle.main
+        let identifier = bundle.infoDictionary?["CFBundleIdentifier"] as? String
+        self.init(subsystem: (identifier ?? "lucarne"), category: category)
     }
     
 }

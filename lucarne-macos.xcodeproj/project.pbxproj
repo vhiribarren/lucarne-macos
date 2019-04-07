@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		638B56EF225A82F10025BCB2 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638B56EE225A82F10025BCB2 /* OSLog.swift */; };
 		63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */; };
 		63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */; };
 		63CC8BCC224F6FCC00F1D80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63CC8BCB224F6FCC00F1D80C /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		638B56EE225A82F10025BCB2 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		63CC8BC4224F6FCC00F1D80C /* Lucarne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lucarne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				63CC8BDB2250EA3D00F1D80C /* ReplaceControllerSegue.swift */,
 				63CC8BD7224F727600F1D80C /* CaptureWindowId.swift */,
 				63CC8BEC2258C4A900F1D80C /* DraggableImageView.swift */,
+				638B56EE225A82F10025BCB2 /* OSLog.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				63CC8BD8224F727600F1D80C /* CaptureWindowId.swift in Sources */,
 				63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */,
 				63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */,
+				638B56EF225A82F10025BCB2 /* OSLog.swift in Sources */,
 				63CC8BED2258C4A900F1D80C /* DraggableImageView.swift in Sources */,
 				63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */,
 			);

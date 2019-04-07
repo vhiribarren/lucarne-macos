@@ -28,50 +28,36 @@ import Cocoa
 
 class LucarneController: NSViewController {
 
-    
     let REFRESH_INTERVAL = TimeInterval(1.0/4.0)
     
-    
+    @IBOutlet weak var imageView: NSImageView!
+    private var timer: Timer?
     var targetWindowId: Int? {
         didSet {
-            os_log("Setting targetWindowId")
+            os_log(.debug, log: .lucarneController, "Setting %@ with targetWindowId: %d", String(describing: self), targetWindowId ?? -1)
             startLucarneUpdate()
         }
     }
     
-    
-    private var timer: Timer?
-    @IBOutlet weak var imageView: NSImageView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    
     override func viewDidAppear() {
         super.viewDidAppear()
+        os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
+        transparentMode()
+    }
+    
+    override func viewWillDisappear() {
+        cancelLucarneUpdate()
+    }
+    
+    private func transparentMode() {
         if let window = view.window {
             window.isOpaque = false
             window.backgroundColor = .clear
             window.isMovableByWindowBackground = true
-            //window.styleMask.remove(.titled)
-            //window.styleMask = .borderless
         }
         else {
-            os_log("window variable is nil", type: .error)
+            os_log(.error, log: .lucarneController, "window variable is nil")
         }
-
-        //view.window!.styleMask.remove(.titled)
-    }
-    
-    
-    override func viewWillAppear() {
-        super.viewWillAppear()
-    }
-
-    
-    override func viewWillDisappear() {
-        cancelLucarneUpdate()
     }
     
     private func startLucarneUpdate() {
@@ -81,14 +67,13 @@ class LucarneController: NSViewController {
         })
     }
     
-    
     private func cancelLucarneUpdate() {
         timer?.invalidate()
     }
     
-    
     private func updateMirroredApp() {
         guard targetWindowId != nil else {
+            os_log(.debug, log: .lucarneController, "targetWindowId variable is nil")
             return
         }
         let windowImage = CGWindowListCreateImage(.null, .optionIncludingWindow, CGWindowID(targetWindowId!), [.boundsIgnoreFraming, .nominalResolution])
