@@ -170,9 +170,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="203" height="79"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" alphaValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w" customClass="DraggableImageView" customModule="Lucarne" customModuleProvider="target">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" alphaValue="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="QDs-R3-H9w" customClass="DraggableImageView" customModule="Lucarne" customModuleProvider="target">
                                 <rect key="frame" x="-3" y="-3" width="209" height="85"/>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="cac-He-bea"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="groove" id="cac-He-bea"/>
                             </imageView>
                         </subviews>
                         <constraints>
