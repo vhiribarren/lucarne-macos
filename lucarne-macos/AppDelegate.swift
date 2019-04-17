@@ -30,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        registerUserDefaultValues()
     }
 
     
@@ -41,6 +42,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let newWindowController = NSStoryboard(name: "Main", bundle: nil)
             .instantiateController(withIdentifier: "SelectionWindow") as? NSWindowController
         newWindowController?.showWindow(self)
+    }
+    
+    
+    private func registerUserDefaultValues() {
+        UserDefaults.standard.register(defaults: [
+            "imagesPerSecond": 5,
+            "opacityPercentage": 0.3,
+            "displayAllSpaces": false
+        ])
     }
     
     
