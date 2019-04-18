@@ -28,6 +28,7 @@ import CoreGraphics
 
 class CaptureController: NSViewController {
     
+    @IBOutlet weak var captureButton: NSButton!
     private var captureCommand: CaptureWindowId?
     private var targetWindowId: Int?
     
@@ -39,6 +40,8 @@ class CaptureController: NSViewController {
 
     @IBAction func onButtonClicked(_ sender: Any) {
         os_log(.debug, log: .captureController, "Starting capture")
+        captureButton.isEnabled = false
+        captureButton.title = "Please select a window"
         captureCommand = CaptureWindowId()
         captureCommand!.capture { windowId in
             os_log(.debug, log: .captureController, "Capturing windowId: %d", windowId)

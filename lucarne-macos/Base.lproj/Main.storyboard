@@ -394,6 +394,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="captureButton" destination="6Fx-cN-yqB" id="MRj-kE-XVF"/>
                         <segue destination="q6B-Ef-nmb" kind="custom" identifier="DisplayLucarne" customClass="ReplaceControllerSegue" customModule="Lucarne" customModuleProvider="target" id="pIf-8G-juL"/>
                     </connections>
                 </viewController>
