@@ -27,8 +27,9 @@ import os.log
 import Cocoa
 
 class LucarneController: NSViewController {
-
-    let REFRESH_INTERVAL = TimeInterval(1.0/4.0)
+    
+    private var refreshInterval: Double = UserDefaults.standard.double(forKey: "imagesPerSecond")
+    private var opacityPercentage: Float = UserDefaults.standard.float(forKey: "opacityPercentage")
     
     @IBOutlet weak var imageView: NSImageView!
     private var timer: Timer?
@@ -39,10 +40,36 @@ class LucarneController: NSViewController {
         }
     }
     
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateSettings), name: UserDefaults.didChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
+    }
+    
+    @objc private func updateSettings() {
+        os_log(.debug, log: .lucarneController, "Settings changed, updating parameters")
+        let userDefaults = UserDefaults.standard
+        imageView.alphaValue = CGFloat(userDefaults.float(forKey: "opacityPercentage"))
+        if userDefaults.bool(forKey: "displayAllSpaces") {
+            view.window?.collectionBehavior.insert(.canJoinAllSpaces)
+        }
+        else {
+             view.window?.collectionBehavior.remove(.canJoinAllSpaces)
+        }
+        refreshInterval = 1.0/Double(userDefaults.integer(forKey: "imagesPerSecond"))
+        if timer?.isValid == true {
+            startLucarneUpdate()
+        }
+    }
+    
     override func viewDidAppear() {
         super.viewDidAppear()
         os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
         transparentMode()
+        updateSettings()
     }
     
     override func viewWillDisappear() {
@@ -61,13 +88,15 @@ class LucarneController: NSViewController {
     }
     
     private func startLucarneUpdate() {
+        os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
         cancelLucarneUpdate()
-        timer = Timer.scheduledTimer(withTimeInterval: REFRESH_INTERVAL, repeats: true, block: { _ in
+        timer = Timer.scheduledTimer(withTimeInterval: refreshInterval, repeats: true, block: { _ in
             self.updateMirroredApp()
         })
     }
     
     private func cancelLucarneUpdate() {
+        os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
         timer?.invalidate()
     }
     

@@ -22,37 +22,13 @@
  SOFTWARE.
  */
 
-
 import Cocoa
 
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class PreferencesWindowController: NSWindowController {
 
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        registerUserDefaultValues()
+    override func windowDidLoad() {
+        super.windowDidLoad()
+        window!.level = .modalPanel
     }
 
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-    }
-
-    
-    @IBAction func onNewMenuSelected(_ sender: NSMenuItem) {
-        let newWindowController = NSStoryboard(name: "Main", bundle: nil)
-            .instantiateController(withIdentifier: "SelectionWindow") as? NSWindowController
-        newWindowController?.showWindow(self)
-    }
-    
-    
-    private func registerUserDefaultValues() {
-        UserDefaults.standard.register(defaults: [
-            "imagesPerSecond": 5,
-            "opacityPercentage": 0.7,
-            "displayAllSpaces": false
-        ])
-    }
-    
-    
 }
-

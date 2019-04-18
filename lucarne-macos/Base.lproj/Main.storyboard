@@ -24,7 +24,7 @@
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
-                                                <segue destination="A7Z-0X-EP6" kind="modal" id="nZf-MW-nfC"/>
+                                                <segue destination="A7Z-0X-EP6" kind="show" id="nZf-MW-nfC"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
@@ -169,7 +169,7 @@
         <!--Window Controller-->
         <scene sceneID="A5b-sP-B9s">
             <objects>
-                <windowController id="A7Z-0X-EP6" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="A7Z-0X-EP6" customClass="PreferencesWindowController" customModule="Lucarne" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="1oK-Jf-GKl">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>

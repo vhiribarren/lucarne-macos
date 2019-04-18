@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6388BD662268697800CC27FC /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388BD652268697800CC27FC /* PreferencesWindowController.swift */; };
 		638B56EF225A82F10025BCB2 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638B56EE225A82F10025BCB2 /* OSLog.swift */; };
 		63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */; };
 		63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6388BD652268697800CC27FC /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		638B56EE225A82F10025BCB2 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		63CC8BC4224F6FCC00F1D80C /* Lucarne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lucarne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CC8BC7224F6FCC00F1D80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				63CC8BC9224F6FCC00F1D80C /* CaptureController.swift */,
 				63CC8BD9224FDC3E00F1D80C /* LucarneController.swift */,
+				6388BD652268697800CC27FC /* PreferencesWindowController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				63CC8BDC2250EA3D00F1D80C /* ReplaceControllerSegue.swift in Sources */,
 				63CC8BCA224F6FCC00F1D80C /* CaptureController.swift in Sources */,
 				638B56EF225A82F10025BCB2 /* OSLog.swift in Sources */,
+				6388BD662268697800CC27FC /* PreferencesWindowController.swift in Sources */,
 				63CC8BED2258C4A900F1D80C /* DraggableImageView.swift in Sources */,
 				63CC8BC8224F6FCC00F1D80C /* AppDelegate.swift in Sources */,
 			);
