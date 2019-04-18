@@ -28,17 +28,20 @@ import Cocoa
 
 class LucarneController: NSViewController {
     
-    private var refreshInterval: Double = UserDefaults.standard.double(forKey: "imagesPerSecond")
-    private var opacityPercentage: Float = UserDefaults.standard.float(forKey: "opacityPercentage")
+    
+    private var refreshInterval: Double = UserDefaults.standard.double(forKey: PrefKey.IMAGE_FREQUENCY)
+    private var opacityPercentage: Float = UserDefaults.standard.float(forKey: PrefKey.IMAGE_OPACITY)
+    private var timer: Timer?
     
     @IBOutlet weak var imageView: NSImageView!
-    private var timer: Timer?
+    
     var targetWindowId: Int? {
         didSet {
             os_log(.debug, log: .lucarneController, "Setting %@ with targetWindowId: %d", String(describing: self), targetWindowId ?? -1)
             startLucarneUpdate()
         }
     }
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -49,21 +52,6 @@ class LucarneController: NSViewController {
         NotificationCenter.default.removeObserver(self, name: UserDefaults.didChangeNotification, object: nil)
     }
     
-    @objc private func updateSettings() {
-        os_log(.debug, log: .lucarneController, "Settings changed, updating parameters")
-        let userDefaults = UserDefaults.standard
-        imageView.alphaValue = CGFloat(userDefaults.float(forKey: "opacityPercentage"))
-        if userDefaults.bool(forKey: "displayAllSpaces") {
-            view.window?.collectionBehavior.insert(.canJoinAllSpaces)
-        }
-        else {
-             view.window?.collectionBehavior.remove(.canJoinAllSpaces)
-        }
-        refreshInterval = 1.0/Double(userDefaults.integer(forKey: "imagesPerSecond"))
-        if timer?.isValid == true {
-            startLucarneUpdate()
-        }
-    }
     
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -73,8 +61,30 @@ class LucarneController: NSViewController {
     }
     
     override func viewWillDisappear() {
+        super.viewWillDisappear()
         cancelLucarneUpdate()
     }
+    
+    
+    @objc private func updateSettings() {
+        os_log(.debug, log: .lucarneController, "Settings changed, updating parameters")
+        let userDefaults = UserDefaults.standard
+        // For image alpha value
+        imageView.alphaValue = CGFloat(userDefaults.float(forKey: PrefKey.IMAGE_OPACITY))
+        // To join all spaces
+        if userDefaults.bool(forKey: PrefKey.JOIN_ALL_SPACES) {
+            view.window?.collectionBehavior.insert(.canJoinAllSpaces)
+        }
+        else {
+            view.window?.collectionBehavior.remove(.canJoinAllSpaces)
+        }
+        // For refresh reate
+        refreshInterval = 1.0/Double(userDefaults.integer(forKey: PrefKey.IMAGE_FREQUENCY))
+        if timer?.isValid == true {
+            startLucarneUpdate()
+        }
+    }
+    
     
     private func transparentMode() {
         if let window = view.window {
@@ -87,6 +97,7 @@ class LucarneController: NSViewController {
         }
     }
     
+    
     private func startLucarneUpdate() {
         os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
         cancelLucarneUpdate()
@@ -95,10 +106,11 @@ class LucarneController: NSViewController {
         })
     }
     
+    
     private func cancelLucarneUpdate() {
-        os_log(.debug,  log: .lucarneController, "%@", "\(#function)")
         timer?.invalidate()
     }
+    
     
     private func updateMirroredApp() {
         guard targetWindowId != nil else {

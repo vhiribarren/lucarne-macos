@@ -22,37 +22,10 @@
  SOFTWARE.
  */
 
+import Foundation
 
-import Cocoa
-
-@NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
-
-
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        registerUserDefaultValues()
-    }
-
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-    }
-
-    
-    @IBAction func onNewMenuSelected(_ sender: NSMenuItem) {
-        let newWindowController = NSStoryboard(name: "Main", bundle: nil)
-            .instantiateController(withIdentifier: "SelectionWindow") as? NSWindowController
-        newWindowController?.showWindow(self)
-    }
-    
-    
-    private func registerUserDefaultValues() {
-        UserDefaults.standard.register(defaults: [
-            PrefKey.IMAGE_FREQUENCY: 5,
-            PrefKey.IMAGE_OPACITY: 0.7,
-            PrefKey.JOIN_ALL_SPACES: false
-        ])
-    }
-    
-    
+struct PrefKey {
+    static let IMAGE_FREQUENCY = "imageFrequency"
+    static let IMAGE_OPACITY = "imageOpacity"
+    static let JOIN_ALL_SPACES = "joinAllSpaces"
 }
-
